@@ -1,12 +1,12 @@
 import Toolbar from "../Components/Toolbar";
 
-function Home() {
+function Main() {
     return(
         <div>
-            <header>Home Page</header>
+            <header>MAIN</header>
             <Toolbar></Toolbar>
         </div>
     )
 }
 
-export default Home;
+export default Main;
