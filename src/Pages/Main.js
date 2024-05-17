@@ -4,6 +4,7 @@ function Main() {
     return(
         <div>
             <header>MAIN</header>
+            
             <Toolbar></Toolbar>
         </div>
     )
