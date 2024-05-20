@@ -1,5 +1,6 @@
 import Toolbar from "../Components/Toolbar";
 import Card from '../Components/Card';
+import '../Components/card.css'
 
 /*
 * Main page or the swiping page of the app 
@@ -9,8 +10,10 @@ import Card from '../Components/Card';
 function Main() {
     return(
         <div>
-            <Card/>
             <Toolbar></Toolbar>
+            <div >
+                <Card/>
+            </div>
         </div>
     )
 }

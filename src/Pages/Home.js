@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Toolbar from "../Components/Toolbar";
 import Modal from '../Components/Modal'
+import './home.css'
 
 // Need a login page 
 function Home() {
@@ -16,9 +17,13 @@ function Home() {
 
     return(
         <div>
-            <button onClick={loginHandler}>Login</button>
-            {modalIsOpen ? <Modal onCancle={cancleHandler} onConfirm={cancleHandler}/> : null } 
             <Toolbar></Toolbar>
+            <div>
+                <div className='button-container'>
+                    <button onClick={loginHandler}>Login</button>
+                </div>
+            </div>
+            {modalIsOpen ? <Modal onCancle={cancleHandler} onConfirm={cancleHandler}/> : null } 
         </div>
     )
 }

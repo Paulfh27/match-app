@@ -9,13 +9,13 @@ function Matches(props) {
     return ( 
         <div>
             <Toolbar></Toolbar>
-            <div padding='20px' className='gallery-container'>
-                <Item>One</Item>
-                <Item>two</Item>
-                <Item>three</Item>
-                <Item>four</Item>
-                <Item>five</Item>
-                <Item>six</Item>
+            <div className='gallery-container'>
+                <Item text="One"></Item>
+                <Item text="Two"></Item>
+                <Item text="Three"></Item>
+                <Item text="Four"></Item>
+                <Item text="Five"></Item>
+                <Item text="Six"></Item>
             </div>
         </div>
     )

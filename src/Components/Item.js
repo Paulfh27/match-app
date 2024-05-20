@@ -7,7 +7,7 @@ import './item.css'
 function Item(props) {
     return (
         <div className='gallery-item'>
-            <h1>{props.text}</h1>
+            <h1 className='gallery-item-title'>{props.text}</h1>
         </div>
     )
 }

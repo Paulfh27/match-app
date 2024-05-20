@@ -1,19 +1,20 @@
 import { Outlet, Link } from "react-router-dom";
+import './toolbar.css'
 
 // Toolbar Class
 //      Sits at the bottom of the screen in most pages 
 //      holds all navigation options
 function Toolbar() {
     return(
-        <div style={{position:'absolute', width:'100%'}}>
-            <ul style={{listStyleType: 'none', margin:0, padding:0, display:'flex'}}>
-                <li style={{marginRight:'10px'}}>
+        <div className='toolbar'>
+            <ul className='nav-links'>
+                <li>
                     <Link to="/">Home</Link>
                 </li>
-                <li style={{marginRight:'10px'}}>
+                <li>
                     <Link to="/Main">Main</Link>
                 </li>
-                <li style={{marginRight:'10px'}}>
+                <li>
                     <Link to="/Matches">Matches</Link>
                 </li>
             </ul>
