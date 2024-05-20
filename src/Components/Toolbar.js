@@ -5,13 +5,16 @@ import { Outlet, Link } from "react-router-dom";
 //      holds all navigation options
 function Toolbar() {
     return(
-        <div style={{position:'absolute', bottom:'0', width:'100%'}}>
+        <div style={{position:'absolute', width:'100%'}}>
             <ul style={{listStyleType: 'none', margin:0, padding:0, display:'flex'}}>
                 <li style={{marginRight:'10px'}}>
                     <Link to="/">Home</Link>
                 </li>
                 <li style={{marginRight:'10px'}}>
                     <Link to="/Main">Main</Link>
+                </li>
+                <li style={{marginRight:'10px'}}>
+                    <Link to="/Matches">Matches</Link>
                 </li>
             </ul>
         </div>

@@ -16,7 +16,6 @@ function Home() {
 
     return(
         <div>
-            <header>Home Page</header>
             <button onClick={loginHandler}>Login</button>
             {modalIsOpen ? <Modal onCancle={cancleHandler} onConfirm={cancleHandler}/> : null } 
             <Toolbar></Toolbar>

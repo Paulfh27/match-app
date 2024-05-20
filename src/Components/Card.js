@@ -6,8 +6,10 @@ function Card(props) {
             <p className='card-content'>
                 This is a test
             </p>
-            <button className='navigation-buttons'>Right</button>
-
+            <div className='navigation-buttons'>
+                <button onClick={props.onLeft}>Left</button>
+                <button onClick={props.onRight}>Right</button>
+            </div>
         </div>
     )
 }
