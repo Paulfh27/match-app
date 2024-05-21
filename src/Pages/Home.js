@@ -2,6 +2,7 @@ import { useState } from "react";
 import Toolbar from "../Components/Toolbar";
 import Modal from '../Components/Modal'
 import './home.css'
+import { Auth } from "../Components/Auth";
 
 // Need a login page 
 function Home() {
@@ -19,6 +20,7 @@ function Home() {
         <div>
             <Toolbar></Toolbar>
             <div>
+                <p><Auth/></p>
                 <div className='button-container'>
                     <button onClick={loginHandler}>Login</button>
                 </div>
