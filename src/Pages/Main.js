@@ -46,7 +46,11 @@ function Main() {
                     <Card 
                         onLeft={leftHandler} onRight={rightHandler}>
                         <h1> {c.Title} </h1>
-                        <p> Company: {c.Company} </p>
+                        <h2> Company: {c.Company} </h2>
+                        <p>{c.Preview}</p>
+                        <a href={c.Link}>
+                            <button>Visit Site</button>
+                        </a>
                     </Card>
                 ))}
             </div>
