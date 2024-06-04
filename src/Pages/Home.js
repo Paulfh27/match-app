@@ -3,29 +3,47 @@ import Toolbar from "../Components/Toolbar";
 import Modal from '../Components/Modal'
 import './home.css'
 import { Auth } from "../Components/Auth";
+import { auth } from '../config/firebase'
+import { createUserWithEmailAndPassword, signOut } from 'firebase/auth'
 
 // Need a login page 
 function Home() {
-    const [loginIsOpen, setLogin] = useState(false)
+    const [loginModalIsOpen, setLoginModal] = useState(false)
+    const [isLoggedin, setLoggedin] = useState(false)
 
     function loginHandler() {
-        setLogin(true)
+        setLoginModal(true)
     }
 
     function cancleHandler() {
-        setLogin(false)
+        setLoginModal(false)
+    }
+
+    const logout = async () => {
+        try{
+            await signOut(auth);
+            setLoggedin(false)
+        }catch (err) {
+            console.error(err)
+        }
     }
 
     return(
         <div>
             <Toolbar></Toolbar>
-            <div>
+            {!isLoggedin ? <div>
                 <div className='button-container'>
                     <button>Sign Up</button>
                     <button onClick={loginHandler}>Login</button>
                 </div>
-            </div>
-            {loginIsOpen ? <Modal> 
+            </div> :
+                <div>
+                    <h1>Welcone Back</h1>
+                    <button onClick={logout}>Sign out</button>
+                </div>
+            }
+
+            {loginModalIsOpen ? <Modal> 
                 <p><Auth onCancle={cancleHandler}/></p>
             </Modal> : null } 
         </div>

@@ -15,14 +15,6 @@ export const Auth = (props) => {
         }
     };
 
-    const logout = async () => {
-        try{
-            await signOut(auth);
-        }catch (err) {
-            console.error(err)
-        }
-    }
-
     return (
         <div>
             <input 
@@ -35,7 +27,6 @@ export const Auth = (props) => {
                 onChange={(e) => setPassword(e.target.value)}
             />
             <button onClick={signin}>Sign In</button>
-            <button onClick={logout}>Log Out</button>
             <button onClick={props.onCancle}>Cancle</button>
         </div>
     )

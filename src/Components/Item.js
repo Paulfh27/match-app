@@ -6,7 +6,7 @@ import './item.css'
 */
 function Item(props) {
     return (
-        <div className='gallery-item'>
+        <div onClick={props.onClick} className='gallery-item'>
             <h1 className='gallery-item-title'>{props.text}</h1>
         </div>
     )

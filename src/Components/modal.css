@@ -23,6 +23,17 @@
     position: relative;
     z-index: 1001; /* Ensure the content is on top of the backdrop */
   }
+
+  .modal-content button{
+    background-color: #007bff;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
   
   /* Close button for the modal */
   .modal-close {
