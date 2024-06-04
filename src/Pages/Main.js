@@ -1,6 +1,6 @@
 import Toolbar from "../Components/Toolbar";
 import Card from '../Components/Card';
-import '../Components/card.css';
+import styles from '../Components/card.module.css';
 import { db } from '../config/firebase'
 import { getDocs, collection} from "firebase/firestore";
 import {useState, useEffect} from "react"
@@ -32,16 +32,23 @@ function Main() {
         getCasesList();
     }, [])
 
+    function leftHandler(){
+    }
+
+    function rightHandler() {
+    }
+
     return(
         <div>
             <Toolbar></Toolbar>
-            <div >
+            <div className={styles.card_container}>
                 {casesList.map((c) => (
-                    <div>
+                    <Card 
+                        onLeft={leftHandler} onRight={rightHandler}>
                         <h1> {c.Title} </h1>
                         <p> Company: {c.Company} </p>
-                    </div>
-                ))};
+                    </Card>
+                ))}
             </div>
         </div>
     )

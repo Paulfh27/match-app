@@ -6,26 +6,28 @@ import { Auth } from "../Components/Auth";
 
 // Need a login page 
 function Home() {
-    const [modalIsOpen, setModal] = useState(false)
+    const [loginIsOpen, setLogin] = useState(false)
 
     function loginHandler() {
-        setModal(true)
+        setLogin(true)
     }
 
     function cancleHandler() {
-        setModal(false)
+        setLogin(false)
     }
 
     return(
         <div>
             <Toolbar></Toolbar>
             <div>
-                <p><Auth/></p>
                 <div className='button-container'>
+                    <button>Sign Up</button>
                     <button onClick={loginHandler}>Login</button>
                 </div>
             </div>
-            {modalIsOpen ? <Modal onCancle={cancleHandler} onConfirm={cancleHandler}/> : null } 
+            {loginIsOpen ? <Modal> 
+                <p><Auth onCancle={cancleHandler}/></p>
+            </Modal> : null } 
         </div>
     )
 }

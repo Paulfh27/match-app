@@ -11,9 +11,7 @@ function Modal(props) {
     return (
         <div className="modal-backdrop">
             <div className="modal-content">
-                <h1>This is a login Page</h1>
-                <button onClick={props.onCancle}>Cancle</button>
-                <button onClick={props.onConfirm}>Confirm</button>
+                {props.children}
             </div>
         </div>
     )

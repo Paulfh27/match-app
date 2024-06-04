@@ -1,13 +1,13 @@
-import './card.css';
+import styles from './card.module.css';
 
 function Card(props) {
     return (
-        <div className='body'>
-            <div className='card'>
-                <p className='card-content'>
-                    This is a test
+        <div className={styles.body}>
+            <div className={styles.card}>
+                <p className={styles.car_content}>
+                    {props.children}
                 </p>
-                <div className='navigation-buttons'>
+                <div className={styles.navigation_buttons}>
                     <button onClick={props.onLeft}>Left</button>
                     <button onClick={props.onRight}>Right</button>
                 </div>

@@ -2,7 +2,7 @@ import { auth } from '../config/firebase'
 import { createUserWithEmailAndPassword, signOut } from 'firebase/auth'
 import { useState } from 'react';
 
-export const Auth = () => {
+export const Auth = (props) => {
 
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
@@ -36,6 +36,7 @@ export const Auth = () => {
             />
             <button onClick={signin}>Sign In</button>
             <button onClick={logout}>Log Out</button>
+            <button onClick={props.onCancle}>Cancle</button>
         </div>
     )
 }
