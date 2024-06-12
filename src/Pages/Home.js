@@ -9,8 +9,7 @@ import { createUserWithEmailAndPassword, signOut } from "firebase/auth";
 // Need a login page
 function Home() {
   const [loginModalIsOpen, setLoginModal] = useState(false);
-  const [isLoggedin, setLoggedin] = useState(false);
-
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   function loginHandler() {
     setLoginModal(true);
   }
@@ -19,19 +18,15 @@ function Home() {
     setLoginModal(false);
   }
 
-  const logout = async () => {
-    try {
-      await signOut(auth);
-      setLoggedin(false);
-    } catch (err) {
-      console.error(err);
-    }
+  const login = (e) => {
+    e.preventDefault();
+    isLoggedIn(true);
   };
 
   return (
     <div>
       <Toolbar></Toolbar>
-      {!isLoggedin ? (
+      {!isLoggedIn ? (
         <div>
           <div className="button-container">
             <button>Sign Up</button>
@@ -53,7 +48,7 @@ function Home() {
               Age: <span id="user-age"></span>
             </li>
           </ul>
-          <button onClick={logout}>Sign out</button>
+          <button>Sign out</button>
         </div>
       )}
 
