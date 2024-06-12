@@ -1,8 +1,8 @@
-import Toolbar from "../Components/Toolbar";
-import Item from "../Components/Item";
-import "../Components/item.css";
+import Toolbar from "../components/Toolbar";
+import Item from "../components/Item";
+import "../components/item.css";
 import { useState } from "react";
-import Modal from "../Components/Modal";
+import Modal from "../components/Modal";
 
 /*
  * Page dedicated to presenting matches in a gallery format

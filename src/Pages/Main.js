@@ -1,6 +1,6 @@
 import Toolbar from "../components/Toolbar";
 import Card from "../components/Card";
-import styles from "../Components/card.module.css";
+import styles from "../components/card.module.css";
 import { db } from "../config/firebase";
 import { getDocs, collection } from "firebase/firestore";
 import { useState, useEffect } from "react";
