@@ -1,14 +1,18 @@
-import { auth } from "../config/firebase";
-import { createUserWithEmailAndPassword, signOut } from "firebase/auth";
+import { auth } from "../../config/firebase";
+import { signInWithEmailAndPassword, createUserWithEmailAndPassword, signOut } from "firebase/auth";
 import { useState } from "react";
+import { useAuth } from '../../contexts/AuthContext'
 
 export const Auth = (props) => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const { user, setUser } = useAuth();
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const { login } = useAuth();
 
   const signin = async () => {
     try {
-      await createUserWithEmailAndPassword(auth, email, password);
+      await signInWithEmailAndPassword(auth, email, password);
+      login(email, password)
     } catch (err) {
       console.error(err);
     }
@@ -25,7 +29,7 @@ export const Auth = (props) => {
         type="password"
         onChange={(e) => setPassword(e.target.value)}
       />
-      <button onClick={signin}>Sign In</button>
+      <button onClick={signin}>Login</button>
       <button onClick={props.onCancle}>Cancle</button>
     </div>
   );
