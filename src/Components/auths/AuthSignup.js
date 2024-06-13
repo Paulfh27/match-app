@@ -4,7 +4,6 @@ import { useState } from "react";
 import { useAuth } from '../../contexts/AuthContext'
 
 export const AuthSignup = (props) => {
-  const { user } = useAuth();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const { login } = useAuth();
