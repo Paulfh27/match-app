@@ -48,7 +48,7 @@ function Home() {
 
       {loginModalIsOpen ? (
         <Modal>
-            <Auth onCancle={cancleButtonHandler} />
+            <Auth onCancle={cancleButtonHandler}/>
         </Modal>
       ) : signUpModalIsOpen ? (
         <Modal>
