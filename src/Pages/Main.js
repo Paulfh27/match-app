@@ -6,13 +6,14 @@ import { getDocs, collection } from "firebase/firestore";
 import { useState, useEffect } from "react";
 
 /*
- * Main page or the swiping page of the app
- *
- * NEED: a loop to cycle through a list of cards generated with backend content
- */
+
+Main page or the swiping page of the app
+NEED: a loop to cycle through a list of cards generated with backend content
+*/
 function Main() {
   const [casesList, setCasesList] = useState([]);
   const casesCollectionRef = collection(db, "cases");
+  const [currIndex, setCurrIndex] = useState(0)
 
   useEffect(() => {
     const getCasesList = async () => {
@@ -32,16 +33,22 @@ function Main() {
     getCasesList();
   }, []);
 
-  function leftHandler() {}
+  function leftHandler() {
+    setCasesList();
+  }
 
-  function rightHandler() {}
+  function rightHandler() {
+    setCasesList();
+  }
 
   return (
     <div>
       <Toolbar></Toolbar>
+      {console.log(casesList)}
       <div className={styles.card_container}>
         {casesList.map((c) => (
           <Card onLeft={leftHandler} onRight={rightHandler}>
+            <h1> {casesList[currIndex].Title}</h1>    {/* Testing indexing through matches */}  
             <h1> {c.Title} </h1>
             <h2> Company: {c.Company} </h2>
             <p>{c.Preview}</p>

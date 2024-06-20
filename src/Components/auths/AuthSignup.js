@@ -1,17 +1,18 @@
 import { auth } from "../../config/firebase";
 import { createUserWithEmailAndPassword, signOut } from "firebase/auth";
 import { useState } from "react";
-import { useAuth } from '../../contexts/AuthContext'
+import { useAuth } from "../../contexts/AuthContext";
 
 export const AuthSignup = (props) => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const { login } = useAuth();
 
   const createAccount = async () => {
     try {
       await createUserWithEmailAndPassword(auth, email, password);
-      login(email, password)
+      login(email, password);
+      props.onSignup();
     } catch (err) {
       console.error(err);
     }

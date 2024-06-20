@@ -3,18 +3,18 @@ import Toolbar from "../components/Toolbar";
 import Modal from "../components/Modal";
 import "./home.css";
 import { Auth } from "../components/auths/AuthLogin";
-import { AuthSignup } from '../components/auths/AuthSignup'
+import { AuthSignup } from "../components/auths/AuthSignup";
 import { auth } from "../config/firebase";
-import { useAuth } from '../contexts/AuthContext'
+import { useAuth } from "../contexts/AuthContext";
 
 // Need a login page
 function Home() {
   const [loginModalIsOpen, setLoginModal] = useState(false);
   const [signUpModalIsOpen, setSignUpModal] = useState(false);
-  
+
   const { user } = useAuth();
   const { logout } = useAuth();
-  
+
   function loginButtonHandler() {
     setLoginModal(true);
   }
@@ -41,18 +41,21 @@ function Home() {
       ) : (
         <div>
           <h1>Welcone Back</h1>
-          <p>{ user.email }</p>
-          <button onClick={ logout }>Sign out</button>
+          <p>{user.email}</p>
+          <button onClick={logout}>Sign out</button>
         </div>
       )}
 
       {loginModalIsOpen ? (
         <Modal>
-            <Auth onCancle={cancleButtonHandler}/>
+          <Auth onCancle={cancleButtonHandler} onLogin={cancleButtonHandler} />
         </Modal>
       ) : signUpModalIsOpen ? (
         <Modal>
-          <AuthSignup onCancle={cancleButtonHandler}/>
+          <AuthSignup
+            onCancle={cancleButtonHandler}
+            onSignup={cancleButtonHandler}
+          />
         </Modal>
       ) : null}
     </div>
